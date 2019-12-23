@@ -42,7 +42,7 @@ public class EmployeeTest {
         List<Employee> actualResult = employeeHandler.getOlderThanEighteen(this.employees);
 
         // Then
-        assertEquals("MIKE", actualResult.get(0).getName());
-        assertEquals("SEPP", actualResult.get(1).getName());
+        assertEquals("SEPP", actualResult.get(0).getName());
+        assertEquals("MIKE", actualResult.get(1).getName());
     }
 }
