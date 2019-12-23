@@ -8,6 +8,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class EmployeeTest {
     private List<Employee> employees;
 
@@ -26,6 +28,21 @@ public class EmployeeTest {
 
         //Then
         List expectResult = Arrays.asList(this.employees.get(1), this.employees.get(3));
-        Assert.assertEquals(expectResult, actualResult);
+        assertEquals(expectResult, actualResult);
+    }
+
+    @Test
+    public void should_return_sorted_employees_when_call_get_sorted_employees() {
+        // Given
+
+        // when
+        EmployeeHandler employeeHandler = new EmployeeHandler();
+        List<Employee> actualResult = employeeHandler.getSortedEmployees(this.employees);
+
+        // Then
+        assertEquals("Max", actualResult.get(0).getName());
+        assertEquals("Mike", actualResult.get(1).getName());
+        assertEquals("Nina", actualResult.get(2).getName());
+        assertEquals("Sepp", actualResult.get(3).getName());
     }
 }
