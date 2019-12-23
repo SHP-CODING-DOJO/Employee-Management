@@ -34,20 +34,7 @@ public class EmployeeTest {
     }
 
     @Test
-    public void should_return_sorted_employees_when_call_older_than_eighteen() {
-        // Given
-
-        // when
-        EmployeeHandler employeeHandler = new EmployeeHandler();
-        List<Employee> actualResult = employeeHandler.getOlderThanEighteen(this.employees);
-
-        // Then
-        assertEquals("Mike", actualResult.get(0).getName());
-        assertEquals("Sepp", actualResult.get(1).getName());
-    }
-
-    @Test
-    public void should_return_capitalized_employees_when_call_older_than_eighteen() {
+    public void should_return_sorted_and_capitalized_employees_when_call_older_than_eighteen() {
         // Given
 
         // when

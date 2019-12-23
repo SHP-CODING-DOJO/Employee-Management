@@ -9,6 +9,7 @@ public class EmployeeHandler {
         return employees.stream()
                 .filter(employee -> employee.getAge() >= 18)
                 .sorted(Comparator.comparing(Employee::getName))
+                .peek(employee -> employee.setName(employee.getName().toUpperCase()))
                 .collect(Collectors.toList());
     }
 }
