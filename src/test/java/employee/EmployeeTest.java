@@ -45,4 +45,17 @@ public class EmployeeTest {
         assertEquals("Mike", actualResult.get(0).getName());
         assertEquals("Sepp", actualResult.get(1).getName());
     }
+
+    @Test
+    public void should_return_capitalized_employees_when_call_older_than_eighteen() {
+        // Given
+
+        // when
+        EmployeeHandler employeeHandler = new EmployeeHandler();
+        List<Employee> actualResult = employeeHandler.getOlderThanEighteen(this.employees);
+
+        // Then
+        assertEquals("MIKE", actualResult.get(0).getName());
+        assertEquals("SEPP", actualResult.get(1).getName());
+    }
 }
